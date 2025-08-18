@@ -123,14 +123,8 @@ ENV SHELL=/bin/bash \
     DOCKER_BUILDKIT=1
 
 # Mount for docker-in-docker 
-#VOLUME [ "/var/lib/docker" ]
+VOLUME [ "/var/lib/docker" ]
 
-#CMD [ "sleep", "infinity" ]
+CMD [ "sleep", "infinity" ]
 
-# [Optional] Install debugger for development of Codespaces - Not in resulting image by default
-ARG DeveloperBuild
-RUN if [ -z $DeveloperBuild ]; then \
-        echo "not including debugger" ; \
-    else \
-        curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l /vsdbg ; \
-    fi
+
