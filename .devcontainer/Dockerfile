@@ -125,7 +125,7 @@ ENV SHELL=/bin/bash \
 # Mount for docker-in-docker 
 #VOLUME [ "/var/lib/docker" ]
 
-CMD [ "sleep", "infinity" ]
+#CMD [ "sleep", "infinity" ]
 
 # [Optional] Install debugger for development of Codespaces - Not in resulting image by default
 ARG DeveloperBuild
