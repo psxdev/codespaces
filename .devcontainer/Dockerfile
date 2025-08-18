@@ -1,8 +1,3 @@
-#-------------------------------------------------------------------------------------------------------------
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
-#-------------------------------------------------------------------------------------------------------------
-
 FROM ubuntu:noble
 
 RUN if id "ubuntu" &>/dev/null; then \
@@ -22,44 +17,64 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     # Install basic build tools
     && apt-get upgrade -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    #dreamcast
+        gawk \
+        patch \
+        bzip2 \
+        tar \
         make \
-        unzip \
-        # The tools in this package are used when installing packages for Python
+        libgmp-dev \
+        libmpfr-dev \
+        libmpc-dev \
+        gettext \
+        wget \
+        libelf-dev \
+        texinfo \
+        bison \
+        flex \
+        sed \
+        git \
         build-essential \
+        diffutils \
+        curl \
+        libjpeg-dev \
+        libpng-dev \
+        python3 \
+        pkg-config \
+        cmake \
+        libisofs-dev \
+        meson \
+        ninja-build \
+        rake \
+    #ps2 additional
+        autopoint \
+        autoconf \
+        automake \
+        libgmp3-dev \
+    #psp additional
+        libusb-1.0-0-dev \
+        libreadline-dev \
+        libcurl4 \
+        libcurl4-openssl-dev \
+        libssl-dev \
+        libarchive-dev \
+        libgpgme-dev \
+        python3-pip \
+        python3-venv \
+        libncurses-dev \
+        pkg-config \
+        libtool \
+        libz-dev \
+    #orbisdev
+        findutils \
+    #others
+        unzip \
         swig3.0 \
-        # Required for Microsoft SQL Server
-        unixodbc-dev \
-        # Required for PostgreSQL
-        libpq-dev \
-        # Required for mysqlclient
-        default-libmysqlclient-dev \
-        # Required for ts
         moreutils \
         rsync \
         zip \
         libgdiplus \
         jq \
-        # By default pip is not available in the buildpacks image
-        python3-pip \
-        #.NET Core related pre-requisites
-        libc6 \
-        libgcc1 \
-        libgssapi-krb5-2 \
-        libncurses6 \
-        liblttng-ust1 \
-        libssl-dev \
-        libstdc++6 \
-        zlib1g \
-        libuuid1 \
-        libunwind8 \
-        sqlite3 \
-        libsqlite3-dev \
-        software-properties-common \
-        tk-dev \
-        uuid-dev \
-        curl \
-        gettext \
-        inotify-tools \
         # x11 for remote graphic gui
         libx11-dev \ 
         libxft-dev \
@@ -108,7 +123,7 @@ ENV SHELL=/bin/bash \
     DOCKER_BUILDKIT=1
 
 # Mount for docker-in-docker 
-VOLUME [ "/var/lib/docker" ]
+#VOLUME [ "/var/lib/docker" ]
 
 CMD [ "sleep", "infinity" ]
 
