@@ -1,7 +1,7 @@
 ARG VARIANT="noble"
-FROM buildpack-deps:${VARIANT}-curl
-
-LABEL dev.containers.features="common"
+FROM ubuntu:noble
+#buildpack-deps:${VARIANT}-curl
+#LABEL dev.containers.features="common"
 
 ARG VARIANT
 RUN if [ "$VARIANT" = "noble" ]; then \
