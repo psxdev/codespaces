@@ -99,14 +99,18 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libx11-dev \
         libxrandr-dev \
         libxi-dev \
-        mesa-utils \
-        libgl1-mesa-dev \
-        libglu1-mesa-dev \
+        #mesa-utils \
+        #libgl1-mesa-dev \
+        #libglu1-mesa-dev \
         libxcursor-dev \
         libxinerama-dev \
         libwayland-dev \
         libxkbcommon-dev \
         libasound2-dev \
+        glslang-tools \
+        libdrm-dev \
+        libunwind-dev \
+        python3-mako \
 #upgrade and add repository
     && apt-get upgrade -y \
     && add-apt-repository universe \
