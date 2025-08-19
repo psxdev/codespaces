@@ -88,11 +88,24 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         xtail \
         software-properties-common \
         libsecret-1-dev \
-# x11 for remote graphic gui
+# x11 for remote graphic gui and raylib for linux
         libx11-dev \ 
         libxft-dev \
         libxext-dev \
-        xauth \
+        xauth \ 
+        libx11-dev \
+        libxrandr-dev \
+        libxi-dev \
+        libgl1-mesa-dev \
+        libglu1-mesa-dev \
+        libxcursor-dev \
+        libxinerama-dev \
+        libwayland-dev \
+        libxkbcommon-dev \
+        libasound2-dev \
+#upgrade and add repository
+    && apt-get upgrade -y \
+    && add-apt-repository universe \
 # Clean up
     && apt-get autoremove -y && apt-get clean -y \
 # Move first run notice to right spot
