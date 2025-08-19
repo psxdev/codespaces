@@ -111,6 +111,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libdrm-dev \
         libunwind-dev \
         python3-mako \
+        python3-yaml \
 #upgrade and add repository
     && apt-get upgrade -y \
     && add-apt-repository universe \
