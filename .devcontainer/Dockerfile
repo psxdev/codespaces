@@ -107,8 +107,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libxrandr-dev \
         libxi-dev \
         mesa-utils \
-        #libgl1-mesa-dev \
-        #libglu1-mesa-dev \
+        libgl1-mesa-dev \
+        libglu1-mesa-dev \
         libxcursor-dev \
         libxinerama-dev \
         libwayland-dev \
