@@ -95,7 +95,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libxft-dev \
         libxext-dev \
         xauth \ 
-        xeyes \
+        x11-apps \
         libx11-dev \
         libxrandr-dev \
         libxi-dev \
