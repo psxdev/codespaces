@@ -4,6 +4,13 @@ FROM ubuntu:noble
 #LABEL dev.containers.features="common"
 
 ARG VARIANT
+
+ARG MESA_VERSION=24.3.4
+ARG LLVM_VERSION=16
+ARG BUILD_TYPE=debugoptimized
+ARG BUILD_OPTIMIZATION=2
+ARG UNWIND=enabled
+
 RUN if [ "$VARIANT" = "noble" ]; then \
         if id "ubuntu" &>/dev/null; then \
             echo "Deleting user 'ubuntu'  for $VARIANT" && userdel -f -r ubuntu || echo "Failed to delete ubuntu user for $VARIANT"; \  
@@ -80,9 +87,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         jq \
         cppcheck \
         valgrind \
-        clang \
-        lldb \
-        llvm \
+        #clang \
+        #lldb \
+        #llvm \
         gdb \
         python3-dev \
         vim \
@@ -112,6 +119,20 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libunwind-dev \
         python3-mako \
         python3-yaml \
+        llvm-${LLVM_VERSION}-dev \
+        libclang-${LLVM_VERSION}-dev \
+        libclang-cpp${LLVM_VERSION}-dev \
+        libllvm${LLVM_VERSION} \
+        zlib1g-dev \
+        libzstd-dev \
+        libzstd1 \
+        libgcc-s1 \
+        zlib1g \
+        libc6 \
+        libdrm2 \
+        libunwind8 \
+        libudev-dev \
+        libudev1 \
 #upgrade and add repository
     && apt-get upgrade -y \
     && add-apt-repository universe \
