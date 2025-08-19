@@ -69,6 +69,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #orbisdev
         findutils \
 #others
+        git \
+        git-lfs \
         unzip \
         swig3.0 \
         moreutils \
@@ -93,6 +95,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libxft-dev \
         libxext-dev \
         xauth \ 
+        xeyes \
         libx11-dev \
         libxrandr-dev \
         libxi-dev \
