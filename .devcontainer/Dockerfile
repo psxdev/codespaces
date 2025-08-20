@@ -87,9 +87,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         jq \
         cppcheck \
         valgrind \
-        #clang \
-        #lldb \
-        #llvm \
+        clang \
+        lldb \
+        llvm \
         gdb \
         python3-dev \
         vim \
@@ -114,25 +114,25 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libwayland-dev \
         libxkbcommon-dev \
         libasound2-dev \
-        glslang-tools \
-        libdrm-dev \
-        libunwind-dev \
-        python3-mako \
-        python3-yaml \
-        llvm-${LLVM_VERSION}-dev \
-        libclang-${LLVM_VERSION}-dev \
-        libclang-cpp${LLVM_VERSION}-dev \
-        libllvm${LLVM_VERSION} \
-        zlib1g-dev \
-        libzstd-dev \
-        libzstd1 \
-        libgcc-s1 \
-        zlib1g \
-        libc6 \
-        libdrm2 \
-        libunwind8 \
-        libudev-dev \
-        libudev1 \
+        #glslang-tools \
+        #libdrm-dev \
+        #libunwind-dev \
+        #python3-mako \
+        #python3-yaml \
+        #llvm-${LLVM_VERSION}-dev \
+        #libclang-${LLVM_VERSION}-dev \
+        #libclang-cpp${LLVM_VERSION}-dev \
+        #libllvm${LLVM_VERSION} \
+        #zlib1g-dev \
+        #libzstd-dev \
+        #libzstd1 \
+        #libgcc-s1 \
+        #zlib1g \
+        #libc6 \
+        #libdrm2 \
+        #libunwind8 \
+        #libudev-dev \
+        #libudev1 \
 #upgrade and add repository
     && apt-get upgrade -y \
     && add-apt-repository universe \
