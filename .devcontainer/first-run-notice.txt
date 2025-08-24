@@ -1,6 +1,18 @@
 👋 Welcome to raylib4Consoles! You are on our default image. 
    - It includes runtimes and tools for console development for raylib in Codespaces
-   - Want to use a custom image instead? Learn more here: https://aka.ms/configure-codespace
+   - For Dreamcast execute: source /usr/local/dcdev/kos/environ.sh
+   - For Nintendo 64 execute: 
+   - For PlayStation 1 execute:
+   - For PlayStation 2 execute:
+   - For PlayStation Portable (PSP) execute:
+   - For PlayStation VITA (PSP2) execute:
+   - For PlayStation 4 (ORBIS) execute: not available
+   - For PlayStation 5 (PROSPERO) execute: not available
+
+   
+
+
+
 
 🔍 To explore VS Code to its fullest, search using the Command Palette (Cmd/Ctrl + Shift + P or F1).
 
