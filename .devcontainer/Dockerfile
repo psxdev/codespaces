@@ -3,13 +3,7 @@ FROM ubuntu:noble
 #buildpack-deps:${VARIANT}-curl
 #LABEL dev.containers.features="common"
 
-ARG VARIANT
 
-ARG MESA_VERSION=24.3.4
-ARG LLVM_VERSION=16
-ARG BUILD_TYPE=debugoptimized
-ARG BUILD_OPTIMIZATION=2
-ARG UNWIND=enabled
 
 RUN if [ "$VARIANT" = "noble" ]; then \
         if id "ubuntu" &>/dev/null; then \
@@ -24,79 +18,79 @@ COPY first-run-notice.txt /tmp/scripts/
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && yes | unminimize 2>&1 \
-    && apt-get -y install --no-install-recommends \
+    && apt-get -y install --no-install-recommends  libmpfr-dev libmpc-dev gettext libelf-dev build-essential libjpeg-dev libpng-dev cmake libisofs-dev meson ninja-build rake autopoint libgmp3-dev libreadline-dev libcurl4 libcurl4-openssl-dev libarchive-dev libgpgme-dev python3-venv libz-dev \
 #dreamcast
-        gawk \
-        patch \
-        bzip2 \
-        tar \
-        make \
-        libgmp-dev \
-        libmpfr-dev \
-        libmpc-dev \
-        gettext \
-        wget \
-        libelf-dev \
-        texinfo \
-        bison \
-        flex \
-        sed \
-        git \
-        build-essential \
-        diffutils \
-        curl \
-        libjpeg-dev \
-        libpng-dev \
-        python3 \
-        pkg-config \
-        cmake \
-        libisofs-dev \
-        meson \
-        ninja-build \
-        rake \
+        #gawk \
+        #patch \
+        #bzip2 \
+        #tar \
+        #make \
+        #libgmp-dev \
+        #libmpfr-dev \
+        #libmpc-dev \
+        #gettext \
+        #wget \
+        #libelf-dev \
+        #texinfo \
+        #bison \
+        #flex \
+        #sed \
+        #git \
+        #build-essential \
+        #diffutils \
+        #curl \
+        #libjpeg-dev \
+        #libpng-dev \
+        #python3 \
+        #pkg-config \
+        #cmake \
+        #libisofs-dev \
+        #meson \
+        #ninja-build \
+        #rake \
 #ps2 additional
-        autopoint \
-        autoconf \
-        automake \
-        libgmp3-dev \
+        #autopoint \
+        #autoconf \
+        #automake \
+        #libgmp3-dev \
 #psp additional
-        libusb-1.0-0-dev \
-        libreadline-dev \
-        libcurl4 \
-        libcurl4-openssl-dev \
-        libssl-dev \
-        libarchive-dev \
-        libgpgme-dev \
-        python3-pip \
-        python3-venv \
-        libncurses-dev \
-        pkg-config \
-        libtool \
-        libz-dev \
+        #libusb-1.0-0-dev \
+        #libreadline-dev \
+        #libcurl4 \
+        #libcurl4-openssl-dev \
+        #libssl-dev \
+        #libarchive-dev \
+        #libgpgme-dev \
+        #python3-pip \
+        #python3-venv \
+        #libncurses-dev \
+        #pkg-config \
+        #libtool \
+        #libz-dev \
 #orbisdev
-        findutils \
+        #findutils \
 #others
-        git \
-        git-lfs \
-        unzip \
-        swig3.0 \
-        moreutils \
-        rsync \
-        zip \
-        libgdiplus \
-        jq \
-        cppcheck \
-        valgrind \
-        clang \
-        lldb \
-        llvm \
-        gdb \
-        python3-dev \
-        vim \
-        vim-doc \
-        xtail \
-        software-properties-common \
-        libsecret-1-dev \
+        #git \
+        #git-lfs \
+        #unzip \
+        #swig3.0 \
+        #moreutils \
+        #rsync \
+        #zip \
+        #libgdiplus \
+        #jq \
+        #cppcheck \
+        #valgrind \
+        #clang \
+        #lldb \
+        #llvm \
+        #gdb \
+        #python3-dev \
+        #vim \
+        #vim-doc \
+        #xtail \
+        #software-properties-common \
+        #libsecret-1-dev \
 # x11 for remote graphic gui and raylib for linux
         libx11-dev \ 
         libxft-dev \
@@ -134,8 +128,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         #libudev-dev \
         #libudev1 \
 #upgrade and add repository
-    && apt-get upgrade -y \
-    && add-apt-repository universe \
+    #&& apt-get upgrade -y \
+    #&& add-apt-repository universe \
 # Clean up
     && apt-get autoremove -y && apt-get clean -y \
 # Move first run notice to right spot
