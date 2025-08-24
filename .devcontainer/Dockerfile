@@ -20,6 +20,7 @@ RUN if [ "$VARIANT" = "noble" ]; then \
     fi
 
 COPY first-run-notice.txt /tmp/scripts/
+COPY dcdev_install.sh /tmp/scripts/
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -147,4 +148,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && printf "$FISH_PROMPT" >> /etc/fish/functions/fish_prompt.fish \
     && printf "if type code-insiders > /dev/null 2>&1; and not type code > /dev/null 2>&1\n  alias code=code-insiders\nend" >> /etc/fish/conf.d/code_alias.fish \   
     # Remove scripts now that we're done with them
-    && apt-get clean -y && rm -rf /tmp/scripts
+    && apt-get clean -y &&  bash /tmp/scripts/script-in-codespace.sh && rm -rf /tmp/scripts
