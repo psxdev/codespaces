@@ -142,10 +142,12 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Move first run notice to right spot
     && mkdir -p "/usr/local/etc/vscode-dev-containers/" \
     && mv -f /tmp/scripts/first-run-notice.txt /usr/local/etc/vscode-dev-containers/ \
+# Install dcdev
+    && bash /tmp/scripts/dcdev_install.sh 
 # Install and setup fish
     && apt-get install -yq fish \
     && FISH_PROMPT="function fish_prompt\n    set_color green\n    echo -n (whoami)\n    set_color normal\n    echo -n \":\"\n    set_color blue\n    echo -n (pwd)\n    set_color normal\n    echo -n \"> \"\nend\n" \
     && printf "$FISH_PROMPT" >> /etc/fish/functions/fish_prompt.fish \
     && printf "if type code-insiders > /dev/null 2>&1; and not type code > /dev/null 2>&1\n  alias code=code-insiders\nend" >> /etc/fish/conf.d/code_alias.fish \   
     # Remove scripts now that we're done with them
-    && apt-get clean -y &&  bash /tmp/scripts/dcdev_install.sh && rm -rf /tmp/scripts
+    && apt-get clean -y && rm -rf /tmp/scripts
