@@ -4,6 +4,7 @@ FROM ubuntu:noble
 #LABEL dev.containers.features="common"
 
 
+ARG VARIANT
 
 RUN if [ "$VARIANT" = "noble" ]; then \
         if id "ubuntu" &>/dev/null; then \
