@@ -143,7 +143,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && mkdir -p "/usr/local/etc/vscode-dev-containers/" \
     && mv -f /tmp/scripts/first-run-notice.txt /usr/local/etc/vscode-dev-containers/ \
 # Install dcdev
-    && bash /tmp/scripts/dcdev_install.sh 
+    && bash /tmp/scripts/dcdev_install.sh  \
 # Install and setup fish
     && apt-get install -yq fish \
     && FISH_PROMPT="function fish_prompt\n    set_color green\n    echo -n (whoami)\n    set_color normal\n    echo -n \":\"\n    set_color blue\n    echo -n (pwd)\n    set_color normal\n    echo -n \"> \"\nend\n" \
