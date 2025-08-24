@@ -74,7 +74,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         #git-lfs \
         #unzip \
         #swig3.0 \
-        #moreutils \
+        moreutils \
         #rsync \
         #zip \
         #libgdiplus \
@@ -89,8 +89,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         #vim \
         #vim-doc \
         #xtail \
-        #software-properties-common \
-        #libsecret-1-dev \
+        software-properties-common \
+        libsecret-1-dev \
 # x11 for remote graphic gui and raylib for linux
         libx11-dev \ 
         libxft-dev \
