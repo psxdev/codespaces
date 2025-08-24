@@ -39,5 +39,5 @@
     "remoteEnv": {
         "DISPLAY": "localhost:10.0"
     },
-	"postCreateCommand": ["/bin/sh", "-c", "/bin/sh ./.devcontainer/postCreateCommand.sh >> 2>&1 /var/logs/dcdev.log"]
+	"postCreateCommand": ["/usr/bin/bash", "-c", "bash ./.devcontainer/postCreateCommand.sh 2>&1 >> /tmp/dcdev.log"]
 }
