@@ -128,8 +128,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         #libudev-dev \
         #libudev1 \
 #upgrade and add repository
-    #&& apt-get upgrade -y \
-    #&& add-apt-repository universe \
+    && apt-get upgrade -y \
+    && add-apt-repository universe \
 # Clean up
     && apt-get autoremove -y && apt-get clean -y \
 # Move first run notice to right spot
